@@ -1,6 +1,8 @@
 <?php
 set_time_limit(0);
 
+
+echo "asdasdsad";
 include_once 'simple_html_dom.php';
 include_once ('objects/clsProduct.php');
 include_once 'clsProductsManager.php';
@@ -19,14 +21,18 @@ foreach($pageData->find('div[class=product-list] div[class=one-product-box]') as
 {
 	//echo $singleProduct."</br></hr>";
 	
+	foreach($singleProduct->find('div[class=name] a') as $nameAndURL)
 	foreach($singleProduct->find('div[class=image] a') as $Imageurl)
 	{
+			echo $nameAndURL->innertext.">> ".$nameAndURL->href;
 			echo "Image URL :".$Imageurl->href;
 			echo "</br>";
 	}
+	foreach($singleProduct->find('div[class=image] a') as $Imageurl)
 	
 	foreach($singleProduct->find('div[class=name] a') as $nameAndURL)
 	{
+			echo "Image URL :".$Imageurl->href;
 			echo $nameAndURL->innertext.">> ".$nameAndURL->href;
 			echo "</br>";
 			GetProductDetails($nameAndURL->href);
@@ -37,6 +43,12 @@ foreach($pageData->find('div[class=product-list] div[class=one-product-box]') as
 	echo "<hr>";
 }
 */
+
+
+
+
+
+
 
 function GetProductDetails($URL)
 {
@@ -83,6 +95,12 @@ function GetProductDetails($URL)
 
 
 GetProductDetails('http://www.pinkcitykirana.com/personal-care/beauty-and-makeup-for-women/himalaya-herbal-eye-kajal-1-gm.html');
+
+
+
+
+
+
 
 
 //echo $pageData;
