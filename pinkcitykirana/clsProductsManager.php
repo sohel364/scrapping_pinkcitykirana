@@ -8,8 +8,8 @@ class clsProductsManager{
 	public static function InsertProducts($ProductsObject){         
                  
 		$DataBaseHelper=new DataAccessHelper();
-		$sql="INSERT INTO `product` (`product_id`,`product_details_url`) VALUES ('".NULL ."','".safe($ProductsObject->GetProductDetailsUrl())."')";  		
-		//echo $sql."<br/>";
+		$sql="INSERT INTO `product` (`product_id`,`product_details_url`) VALUES ('".NULL ."','".safe($ProductsObject->product_details_url)."')";  		
+		echo $sql."<br/>";
 		return $DataBaseHelper->ExecuteInsertReturnID($sql);
 	}	
 }

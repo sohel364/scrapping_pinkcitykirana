@@ -3,7 +3,6 @@
 class productDetails{
 
 	private $product_details_id;
-	private $product_details_id;
 	private $product_name;
 	private $product_code;
 	private $product_spec_value;
